@@ -7,6 +7,8 @@ HEADERS = {
     'Referer': "http://www.dmmbus.us"
 }
 
+
+
 res = requests.get('http://www.dmmbus.us', headers=HEADERS, timeout=10)
 res.encoding = 'utf-8'
 print(res.text)
