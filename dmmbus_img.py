@@ -3,7 +3,6 @@
 
 import os
 import time
-import threading
 from multiprocessing import Pool, cpu_count
 
 import requests
@@ -18,7 +17,7 @@ HEADERS = {
     'X-Requested-With': 'XMLHttpRequest',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 '
                   '(KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
-    'Referer': "https://www.dmmbus.us"
+    'Referer': "https://www.dmmbus.cloud/"
 }
 
 DIR_PATH = r"E:\dmmbus"  # 下载图片保存路径
@@ -90,11 +89,11 @@ def delete_empty_dir(save_dir):
 
 def selenium_request(url):
     # C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe
-    browser = webdriver.Chrome('C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe')
+    # browser = webdriver.Chrome('C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe')
+    browser = webdriver.Chrome('C:\Users\Administrator\AppData\Local\Google\Chrome\Application\chromedriver.exe')
     # browser.maximize_window()  # 浏览器窗口最大化
     browser.get(url)
     return browser.page_source
-
 
 def urls_crawler(url):
     """
@@ -159,7 +158,7 @@ def urls_crawler(url):
 
 
 if __name__ == "__main__":
-    urls = ['https://www.dmmbus.us/page/{cnt}'.format(cnt=cnt)
+    urls = ['https://www.dmmbus.cloud/page/{cnt}'.format(cnt=cnt)
             for cnt in range(1, 2)]
     pool = Pool(processes=cpu_count())
     try:
