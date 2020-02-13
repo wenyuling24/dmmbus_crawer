@@ -11,8 +11,12 @@
 ![](https://github.com/wenyuling24/dmmbus_crawer/blob/master/image/20190426103535.png)
 
 ## 在爬磁力链接的时候遇到一个问题 它好像是个动态的数组，因此用了selenium
+## browser = webdriver.Chrome('C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe')
+## 这里是chrome安装地址 把chromedriver.exe放进去
 
-## 主要是使用Chrome浏览器 先去: https://www.cnblogs.com/JHblogs/p/7699951.html下载对应的驱动，然后按照步骤一步步弄就是了
+## 主要是使用Chrome浏览器 先去:
+![] https://www.cnblogs.com/JHblogs/p/7699951.html
+下载对应的驱动，然后按照步骤一步步弄就是了
 
 
 ### 欢迎 Fork 和 Star

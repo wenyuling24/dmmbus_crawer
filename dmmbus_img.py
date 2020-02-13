@@ -90,10 +90,14 @@ def delete_empty_dir(save_dir):
 def selenium_request(url):
     # C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe
     # browser = webdriver.Chrome('C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe')
-    browser = webdriver.Chrome('C:\Users\Administrator\AppData\Local\Google\Chrome\Application\chromedriver.exe')
+    # browser = webdriver.Chrome('C:\Users\Administrator\AppData\Local\Google\Chrome\Application\chromedriver.exe')
+    browser = webdriver.Chrome('C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe')
     # browser.maximize_window()  # 浏览器窗口最大化
+    # 浏览器窗口最小化
+    # browser.minimize_window()
     browser.get(url)
     return browser.page_source
+
 
 def urls_crawler(url):
     """
@@ -121,18 +125,8 @@ def urls_crawler(url):
                 # html_doc = requests.get(href, headers=HEADERS, timeout=10).text
                 html_doc = selenium_request(href)
                 # print html_doc
+
                 second_folder_name = BeautifulSoup(html_doc, 'lxml')
-                # # 获得磁力链接
-                movie_table = second_folder_name.find('table', id='magnet-table')
-                movie_box = movie_table.find_all('a')
-                # print movie_box
-                for movie_item in movie_box:
-                    movie_href = movie_item.get('href')
-                    print movie_href
-                    movie_size = movie_item.text
-                    print movie_size
-                    save_file(movie_size, movie_href)
-                    break
 
                 # 获得樣品圖像
                 h4_box = second_folder_name.find_all('h4')
@@ -153,6 +147,18 @@ def urls_crawler(url):
                             # 保存大图
                             save_pic(href, pic_title)
                         break
+
+                # 获得磁力链接
+                movie_table = second_folder_name.find('table', id='magnet-table')
+                movie_box = movie_table.find_all('a')
+                print movie_box
+                for movie_item in movie_box:
+                    movie_href = movie_item.get('href')
+                    print movie_href
+                    movie_size = movie_item.text
+                    print movie_size
+                    save_file(movie_size, movie_href)
+                    break
     except Exception as e:
         print('Exception: ' + e)
 
