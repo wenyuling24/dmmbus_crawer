@@ -7,20 +7,18 @@ from multiprocessing import Pool, cpu_count
 
 import requests
 from bs4 import BeautifulSoup
-import sys
 
 from selenium import webdriver
 
-reload(sys)
-sys.setdefaultencoding('utf8')
 HEADERS = {
     'X-Requested-With': 'XMLHttpRequest',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 '
                   '(KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
-    'Referer': "https://www.dmmbus.cloud/"
+    'Referer': "https://www.fanbus.pw/"
 }
 
-DIR_PATH = r"E:\dmmbus"  # 下载图片保存路径
+DIR_PATH = r"C:\dmmbus"  # 下载图片保存路径
+DMM_BUS_PATH = "https://www.fanbus.pw/"
 
 
 def create_folder(path, name):
@@ -51,7 +49,7 @@ def save_file(title, text):
         with open(file_name.decode('utf-8'), 'w') as f:
             f.write(text)
     except Exception as e:
-        print e
+        print('Exception: ' + e)
 
 
 def make_dir(folder_name):
@@ -91,10 +89,11 @@ def selenium_request(url):
     # C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe
     # browser = webdriver.Chrome('C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe')
     # browser = webdriver.Chrome('C:\Users\Administrator\AppData\Local\Google\Chrome\Application\chromedriver.exe')
-    browser = webdriver.Chrome('C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe')
+    browser = webdriver.Chrome(r'C:\Users\dalian\AppData\Local\Google\Chrome\Application\chromedriver.exe')
     # browser.maximize_window()  # 浏览器窗口最大化
     # 浏览器窗口最小化
     # browser.minimize_window()
+    browser.set_window_size(2, 2)
     browser.get(url)
     return browser.page_source
 
@@ -115,9 +114,9 @@ def urls_crawler(url):
             img = water_item.find('img')
             img_title = img.get('title')
             title = water_item.find('date').text
-            print href
-            print img_title
-            print title
+            print(href)
+            print(img_title)
+            print(title)
             if make_dir(title):
 
                 # 这里进入第二级界面
@@ -151,12 +150,12 @@ def urls_crawler(url):
                 # 获得磁力链接
                 movie_table = second_folder_name.find('table', id='magnet-table')
                 movie_box = movie_table.find_all('a')
-                print movie_box
+                print(movie_box)
                 for movie_item in movie_box:
                     movie_href = movie_item.get('href')
-                    print movie_href
+                    print(movie_href)
                     movie_size = movie_item.text
-                    print movie_size
+                    print(movie_size)
                     save_file(movie_size, movie_href)
                     break
     except Exception as e:
@@ -164,7 +163,7 @@ def urls_crawler(url):
 
 
 if __name__ == "__main__":
-    urls = ['https://www.dmmbus.cloud/page/{cnt}'.format(cnt=cnt)
+    urls = [DMM_BUS_PATH + 'page/{cnt}'.format(cnt=cnt)
             for cnt in range(1, 2)]
     pool = Pool(processes=cpu_count())
     try:
