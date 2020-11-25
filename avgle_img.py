@@ -7,9 +7,9 @@ HEADERS = {
     'Referer': "https://www.fanbus.pw/"
 }
 
-default_path = "https://www.fanbus.pw"
+default_path = "https://www.fanbus.pw/CEAD-324"
 # default_path = "https://btsow.surf/search/HNDB-180"
 
-res = requests.get(default_path, headers=HEADERS, timeout=10)
+res = requests.get(default_path, HEADERS, 10)
 res.encoding = 'utf-8'
 print(res.text)

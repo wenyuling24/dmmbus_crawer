@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="91b261d0-a4dc-468c-94e0-76b51bb3a94d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dmmbus_crawler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dmmbus_crawler.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="91b261d0-a4dc-468c-94e0-76b51bb3a94d" name="Default Changelist" comment="更新Python 3.x">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/avgle_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/avgle_img.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dmmbus_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/dmmbus_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -108,6 +125,14 @@
       <workItem from="1556242718133" duration="1174000" />
       <workItem from="1556244240633" duration="2781000" />
     </task>
+    <task id="LOCAL-00001" summary="更新Python 3.x">
+      <created>1606289210724</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606289210724</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -115,6 +140,21 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="更新Python 3.x" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新Python 3.x" />
   </component>
   <component name="WindowStateProjectService">
     <state x="395" y="91" key="#Inspections" timestamp="1606183973614">
@@ -125,26 +165,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1606184776178" />
-    <state width="1493" height="215" key="GridCell.Tab.0.bottom" timestamp="1606288728050">
+    <state width="1493" height="436" key="GridCell.Tab.0.bottom" timestamp="1606290934582">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606288728050" />
-    <state width="1493" height="215" key="GridCell.Tab.0.center" timestamp="1606288728050">
+    <state width="1493" height="436" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606290934582" />
+    <state width="1493" height="436" key="GridCell.Tab.0.center" timestamp="1606290934582">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606288728050" />
-    <state width="1493" height="215" key="GridCell.Tab.0.left" timestamp="1606288728050">
+    <state width="1493" height="436" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606290934582" />
+    <state width="1493" height="436" key="GridCell.Tab.0.left" timestamp="1606290934582">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606288728050" />
-    <state width="1493" height="215" key="GridCell.Tab.0.right" timestamp="1606288728050">
+    <state width="1493" height="436" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606290934582" />
+    <state width="1493" height="436" key="GridCell.Tab.0.right" timestamp="1606290934582">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606288728050" />
+    <state width="1493" height="436" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606290934582" />
     <state x="270" y="57" key="SettingsEditor" timestamp="1606187921888">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606187921888" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606289284954">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606289284954" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

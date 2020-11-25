@@ -33,7 +33,7 @@ def save_pic(pic_src, pic_title):
     将图片下载到本地文件夹
     """
     try:
-        img = requests.get(pic_src, headers=HEADERS, timeout=10)
+        img = requests.get(pic_src, HEADERS, 10)
         img_name = pic_title + ".jpg"
         with open(img_name, 'ab') as f:
             f.write(img.content)
@@ -46,7 +46,7 @@ def save_pic(pic_src, pic_title):
 def save_file(title, text):
     try:
         file_name = title.replace('\n', '').replace('\t', '').replace(' ', '') + '.txt'
-        with open(file_name.decode('utf-8'), 'w') as f:
+        with open(file_name.encode('utf-8').decode('utf-8'), 'w') as f:
             f.write(text)
     except Exception as e:
         print('Exception: ' + e)
@@ -104,10 +104,10 @@ def urls_crawler(url):
     """
     try:
         # 获取目标地址的html结构文档
-        html_doc = requests.get(url, headers=HEADERS, timeout=10).text
+        html_doc = requests.get(url, HEADERS, 10).text
         # 解析html
         folder_name = BeautifulSoup(html_doc, 'lxml')
-        waterfall = folder_name.find('div', id='waterfall')
+        waterfall = folder_name.find('div', 'waterfall')
         all_waterfall_box = waterfall.find_all('a')
         for water_item in all_waterfall_box:
             href = water_item.get('href')
@@ -154,23 +154,23 @@ def urls_crawler(url):
                 for movie_item in movie_box:
                     movie_href = movie_item.get('href')
                     print(movie_href)
-                    movie_size = movie_item.text
-                    print(movie_size)
-                    save_file(movie_size, movie_href)
+                    movie_text = movie_item.text
+                    print(movie_text)
+                    save_file(movie_text, movie_href)
                     break
     except Exception as e:
         print('Exception: ' + e)
 
 
 if __name__ == "__main__":
-    urls = [DMM_BUS_PATH + 'page/{cnt}'.format(cnt=cnt)
+    urls = [DMM_BUS_PATH + 'page/{cnt}'.format(cnt)
             for cnt in range(1, 2)]
-    pool = Pool(processes=cpu_count())
+    pool = Pool(cpu_count())
     try:
         delete_empty_dir(DIR_PATH)
         pool.map(urls_crawler, urls)
 
     except Exception:
-        time.sleep(30)
+        time.sleep(3)
         delete_empty_dir(DIR_PATH)
         pool.map(urls_crawler, urls)
